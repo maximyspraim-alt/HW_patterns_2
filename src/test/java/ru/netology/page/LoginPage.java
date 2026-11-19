@@ -24,7 +24,7 @@ public class LoginPage {
     public void waitForDashboard() {
         dashboardHeading
                 .shouldBe(Condition.visible, Duration.ofSeconds(15))
-                .shouldHave(Condition.text("ЭТОГО ТЕКСТА НЕТ"), Duration.ofSeconds(15));
+                .shouldHave(Condition.text(expectedText), Duration.ofSeconds(15));
     }
 
     public void waitForError(String expectedText) {
