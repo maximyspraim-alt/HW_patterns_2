@@ -18,6 +18,14 @@ public class DataGenerator {
         return faker.internet().password();
     }
 
+    public static String generateWrongPassword(String validPassword) {
+        String wrongPassword;
+        do {
+            wrongPassword = generatePassword();
+        } while (wrongPassword.equals(validPassword));
+        return wrongPassword;
+    }
+
     public static RegistrationDto generateActiveUser() {
         return RegistrationDto.builder()
                 .login(generateLogin())
